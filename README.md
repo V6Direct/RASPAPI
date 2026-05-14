@@ -57,6 +57,53 @@ For production, use a systemd service or run behind a reverse proxy (nginx/caddy
 
 ***
 
+
+***
+
+## Quick Start (Demo)
+
+A public demo instance is available and uses the default demo API key:
+
+```text
+X-API-Key: changeme
+```
+
+Replace `demo.v6direct.org` below with the actual public demo hostname if it differs:
+
+```bash
+# Health check (no auth)
+curl https://demo.v6direct.org/health
+
+# Full system snapshot
+curl -H "X-API-Key: changeme" https://demo.v6direct.org/stats
+
+# CPU only
+curl -H "X-API-Key: changeme" https://demo.v6direct.org/stats/cpu
+
+# Memory & swap
+curl -H "X-API-Key: changeme" https://demo.v6direct.org/stats/memory
+
+# Network interfaces (all)
+curl -H "X-API-Key: changeme" https://demo.v6direct.org/stats/network
+
+# Filter by interface
+curl -H "X-API-Key: changeme" "https://demo.v6direct.org/stats/network?interface=eth0"
+
+# Last 10 history samples
+curl -H "X-API-Key: changeme" "https://demo.v6direct.org/stats/history?limit=10"
+
+# Force cache refresh
+curl -X POST -H "X-API-Key: changeme" -H "Content-Type: application/json"      -d '{"reason": "testing", "full": false}'      https://demo.v6direct.org/stats/refresh
+```
+
+For local development, the same default key works unless `API_KEY` is overridden:
+
+```bash
+API_KEY=changeme uvicorn code:app --host 127.0.0.1 --port 8000
+```
+
+> If the public demo exposes Swagger, open `/docs`, click **Authorize**, and enter `changeme` as the API key.
+
 ## API Reference
 
 ### Authentication
