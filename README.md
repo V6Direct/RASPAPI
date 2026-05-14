@@ -91,7 +91,7 @@ curl -H "X-API-Key: changeme" "https://raspapi.core01.eu/stats/network?interface
 curl -H "X-API-Key: changeme" "https://raspapi.core01.eu/stats/history?limit=10"
 
 # Force cache refresh
-curl -X POST -H "X-API-Key: changeme" -H "Content-Type: application/json"      -d '{"reason": "testing", "full": false}'      https://demo.v6direct.org/stats/refresh
+curl -X POST -H "X-API-Key: changeme" -H "Content-Type: application/json"      -d '{"reason": "testing", "full": false}'      https://raspapi.core01.eu/stats/refresh
 ```
 
 For local development, the same default key works unless `API_KEY` is overridden:
