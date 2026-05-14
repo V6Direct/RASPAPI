@@ -72,25 +72,25 @@ Replace `demo.v6direct.org` below with the actual public demo hostname if it dif
 
 ```bash
 # Health check (no auth)
-curl https://demo.v6direct.org/health
+curl https://raspiapi.core01.eu/health
 
 # Full system snapshot
-curl -H "X-API-Key: changeme" https://demo.v6direct.org/stats
+curl -H "X-API-Key: changeme" https://raspiapi.core01.eu/stats
 
 # CPU only
-curl -H "X-API-Key: changeme" https://demo.v6direct.org/stats/cpu
+curl -H "X-API-Key: changeme" https://raspiapi.core01.eu/stats/cpu
 
 # Memory & swap
-curl -H "X-API-Key: changeme" https://demo.v6direct.org/stats/memory
+curl -H "X-API-Key: changeme" https://raspiapi.core01.eu/stats/memory
 
 # Network interfaces (all)
-curl -H "X-API-Key: changeme" https://demo.v6direct.org/stats/network
+curl -H "X-API-Key: changeme" https://raspiapi.core01.eu/stats/network
 
 # Filter by interface
-curl -H "X-API-Key: changeme" "https://demo.v6direct.org/stats/network?interface=eth0"
+curl -H "X-API-Key: changeme" "https://raspiapi.core01.eu/stats/network?interface=eth0"
 
 # Last 10 history samples
-curl -H "X-API-Key: changeme" "https://demo.v6direct.org/stats/history?limit=10"
+curl -H "X-API-Key: changeme" "https://raspiapi.core01.eu/stats/history?limit=10"
 
 # Force cache refresh
 curl -X POST -H "X-API-Key: changeme" -H "Content-Type: application/json"      -d '{"reason": "testing", "full": false}'      https://demo.v6direct.org/stats/refresh
